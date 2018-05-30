@@ -1,0 +1,53 @@
+font-family: 'PT Sans', sans-serif;
+
+h1{
+  text-align: center;
+}
+
+.container{
+  border-style: groove:
+  border: 4px;
+  border-color: #00000;
+  border-radius: 15px;
+  background-color: #FDEBD0;
+}
+
+button.one {
+  max-width: 100px;
+  color: #D7DBDD;
+  border-radius: 15px;
+}
+
+button.two{
+  max-width: 150px;
+  color: #599B84;
+  border-radius: 100%;
+}
+
+#input-form{
+  text-align: center;
+}
+
+#error.card-header{
+  background-color: #CD6155;
+}
+
+#city.card-header{
+  background-color: #CD6155;
+}
+
+#temperature.card-header{
+  background-color: #CD6155;
+}
+
+#condtion.card-header{
+  background-color: #CD6155;
+}
+
+.card-header{
+  font-weight: bold;
+}
+
+.card-body{
+  font-weight: normal;
+}
