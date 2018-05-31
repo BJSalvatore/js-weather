@@ -4,56 +4,77 @@
 <head>
   <meta charset="utf-8">
 	<title>Weather Application</title>
+  <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800|PT+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
   integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
 <body>
-<div class="container" max-width = "400px" min-width="500px">
+<div class="container" style="background-color: grey; margin:20px; border-style:solid; border-width: 6px; border-radius: 15px;">
     <div id="input-form mb-3">
-      <h1>Weather Application</h1>
+      <h1><center>Weather Application</center></h1>
         <form>
           <div class="row justify-content-center">
             <div class="col">
-              <button type="button" class=" one form-control" placeholder="Zip Code">
-            </div>
+              <button type="button" class="one form-control" placeholder="ZipCode">Enter zipcode here.</button>
+              </div>
             <div class="col">
-              <button type="button" class="two form-control" onclick ="test" placeholder="Get Weather">
+              <button type="button" class="two form-control" onclick ="test" placeholder="Get Weather">Get Weather</button>
             </div>
             </div>
         </form>
       </div>
 
-<div class="card text-center">
+<div class ="section" style="background-color: black;">
     <div id="error">
-      <div class="card-header">Error</div>
-      <div class="card-body">STUFF: Stuff goes here</div>
+      <div class="card mb-3">
+      <div class="card-header" style="font-size: 18px; font-family: Coda; background-color: #C0392B">Error</div>
+      <div class="card-body" placeholder="errorMessage"</div>
     </div>
-
-  <div id="city">
-    <div class="card-header">City</div>
-      <div class="card-body">STUFF: Stuff goes here</div>
   </div>
-
-  <div id="temperature">
-    <div class="card-header">Temperature</div>
-      <div id="cityOutputK" class="card-body">STUFF: Stuff goes here</div>
-      <div id="cityOutputF" class="card-body">STUFF: Stuff goes here</div>
-      <div id="cityOutputC" class="card-body">STUFF: Stuff goes here</div>
   </div>
+</div>
 
+<div class ="section" style="background-color: black;">
+   <div class="card mb-3">
+  <div id="city" style="font-size: 18px; font-family: Coda;">
+    <div class="card-header" style="font-size: 18px; font-family: Coda; background-color: #229954">City</div>
+      <div class="card-body" placeholder="city"</div>
+  </div>
+</div>
+</div>
+</div>
+
+<div class ="section" style="background-color: black;">
+   <div class="card mb-3" style="border-radius: 15px;">
+  <div id="temperature" style="font-size: 18px; font-family: Coda;">
+    <div class="card-header" style="font-size: 18px; font-family: Coda; background-color: #2E86C1;">Temperature</div>
+      <div id="cityOutputK" class="card-body" placeholder="cityOutputK"></div>
+      <div id="cityOutputF" class="card-body" placeholder="cityOutputF"></div>
+      <div id="cityOutputC" class="card-body" placeholder="cityOutputCV"></div>
+  </div>
+</div>
+</div>
+
+<div class ="section" style="background-color: black;">
+  <div class="card mb-3">
   <div id="condtion">
-    <div class="card-header">Condition</div>
-      <div class="card-body">STUFF: Stuff goes here</div>
+    <div class="card-header" style="font-size: 18px; font-family: Coda; background-color: #D4AC0D">Condition</div>
+      <div class="card-body" placeholder="condition"></div>
+    </div>
+    </div>
   </div>
+  <div>
 
+<div class ="section" style="background-color: black;">
   <div id="display">
+    <div class="card mb-3">
         <div class="card-header">Seasonal Display</div>
         <div class="card-body" src=""></div>
-  </div>
-</div> //ends card-text center
-</div> //ends class container
+      </div>
+ </div>
+</div>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
