@@ -1,5 +1,5 @@
 // variables for input form
-var zipCode = getelementByID('zipCode');
+var zipCode = getElementByID('zipCode');
 
 // Input form
 var weatherButton = document.getElementById('weatherButton');

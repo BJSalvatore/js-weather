@@ -10,7 +10,10 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body class="container">
+<body>
+<div id="bg">
+		<img src=""images/black_background_wood.jpg" min-width="350px"; max-width="500px" style="margin:20px; border-style:solid; border-width: 6px; border-radius: 15px;">
+	</div>
     <div id="input-form mb-3">
       <h1><center>Weather Application</center></h1>
         <form>
@@ -25,56 +28,55 @@
         </form>
       </div>
 
-<div class ="section">
+<div class ="section" style="background-color: black;">
     <div id="error">
       <div class="card mb-3">
-      <div class="card-header" style=" background-color: red; border-top-left-radius: 10px; border-top-right-radius: 15px;">Error</div>
+      <div class="card-header" style="font-size: 18px; font-family: Coda; background-color: #C0392B">Error</div>
       <div class="card-body" placeholder="errorMessage"</div>
     </div>
   </div>
   </div>
 </div>
 
-<div class ="section">
+<div class ="section" style="background-color: black;">
    <div class="card mb-3">
   <div id="city" style="font-size: 18px; font-family: Coda;">
-    <div class="card-header" style="background-color: #229954; border-top-left-radius: 10px; border-top-right-radius: 15px;">City</div>
+    <div class="card-header" style="font-size: 18px; font-family: Coda; background-color: #229954">City</div>
       <div class="card-body" placeholder="city"</div>
   </div>
 </div>
 </div>
 </div>
 
-<div class ="section">
-   <div class="card mb-3">
+<div class ="section" style="background-color: black;">
+   <div class="card mb-3" style="border-radius: 15px;">
   <div id="temperature" style="font-size: 18px; font-family: Coda;">
-    <div class="card-header" style="background-color: #2E86C1; border-top-left-radius: 10px; border-top-right-radius: 15px;">Temperature</div>
-    <div class="row align-items-center justify-content-center no-gutters">
-      <div id="cityOutputK" class="card-body col text-center pt-3 pb-3" placeholder="cityOutputK"></div>
-      <div id="cityOutputF" class="card-bodycol text-center pt-3 pb-3" placeholder="cityOutputF"></div>
-      <div id="cityOutputC" class="card-bodycol text-center pt-3 pb-3" placeholder="cityOutputCV"></div>
-    </div>
+    <div class="card-header" style="font-size: 18px; font-family: Coda; background-color: #2E86C1;">Temperature</div>
+      <div id="cityOutputK" class="card-body" placeholder="cityOutputK"></div>
+      <div id="cityOutputF" class="card-body" placeholder="cityOutputF"></div>
+      <div id="cityOutputC" class="card-body" placeholder="cityOutputCV"></div>
   </div>
 </div>
 </div>
 
-<div class ="section">
+<div class ="section" style="background-color: black;">
   <div class="card mb-3">
   <div id="condtion">
-    <div class="card-header" style="background-color: #D4AC0D; border-top-left-radius: 10px; border-top-right-radius: 15px;">Condition</div>
+    <div class="card-header" style="font-size: 18px; font-family: Coda; background-color: #D4AC0D">Condition</div>
       <div class="card-body" placeholder="condition"></div>
     </div>
     </div>
   </div>
   <div>
 
-<div class ="section">
+<div class ="section" style="background-color: black;">
   <div id="display">
     <div class="card mb-3">
         <div class="card-header">Seasonal Display</div>
         <div class="card-body" src=""></div>
       </div>
  </div>
+</div>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
