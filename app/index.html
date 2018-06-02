@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
 	<title>Weather Application</title>
-  <link href="https://fonts.googleapis.com/css?family=Coda+Caption:800|PT+Sans" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Coda|Merriweather|PT+Sans" rel="stylesheet">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
   integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
@@ -16,10 +16,11 @@
         <form>
           <div class="row justify-content-center">
             <div class="col">
-              <button type="button" class="form-control" placeholder="ZipCode" style="background-color: #00000">Enter zipcode here.</button>
-              </div>
+              <input id="zipInput" type="input" class="form-control" placeholder="zipCode"></input>
+            </div>
             <div class="col">
-              <button type="button" class="form-control" onclick ="test" placeholder="Get Weather" style="background-color: #00000">Get Weather</button>
+              <button id="weatherButton" type="button" class="form-control" onclick ="test"
+              placeholder="Get Weather">Get Weather</button>
             </div>
             </div>
         </form>
@@ -28,17 +29,16 @@
 <div class ="section">
     <div id="error">
       <div class="card mb-3">
-      <div class="card-header" style=" background-color: red; border-top-left-radius: 10px; border-top-right-radius: 15px;">Error</div>
-      <div class="card-body" placeholder="errorMessage"</div>
+      <div class="card-header" style="background-color: #8B0000; border-top-left-radius: 10px; border-top-right-radius: 15px;">Error</div>
+      <div class="card-body" placeholder="errorMessage"></div>
     </div>
   </div>
   </div>
-</div>
 
 <div class ="section">
    <div class="card mb-3">
-  <div id="city" style="font-size: 18px; font-family: Coda;">
-    <div class="card-header" style="background-color: #229954; border-top-left-radius: 10px; border-top-right-radius: 15px;">City</div>
+  <div id="city" style="font-size: 18px; font-family: Merriweather;">
+    <div class="card-header" style="background-color: #013243; border-top-left-radius: 10px; border-top-right-radius: 15px;">City</div>
       <div class="card-body" placeholder="city"</div>
   </div>
 </div>
@@ -48,7 +48,7 @@
 <div class ="section">
    <div class="card mb-3">
   <div id="temperature" style="font-size: 18px; font-family: Coda;">
-    <div class="card-header" style="background-color: #2E86C1; border-top-left-radius: 10px; border-top-right-radius: 15px;">Temperature</div>
+    <div class="card-header" style="background-color: #9A12B3; border-top-left-radius: 10px; border-top-right-radius: 15px;">Temperature</div>
     <div class="row align-items-center justify-content-center no-gutters">
       <div id="cityOutputK" class="card-body col text-center pt-3 pb-3" placeholder="cityOutputK"></div>
       <div id="cityOutputF" class="card-bodycol text-center pt-3 pb-3" placeholder="cityOutputF"></div>
@@ -61,20 +61,30 @@
 <div class ="section">
   <div class="card mb-3">
   <div id="condtion">
-    <div class="card-header" style="background-color: #D4AC0D; border-top-left-radius: 10px; border-top-right-radius: 15px;">Condition</div>
+    <div class="card-header" style="background-color: #D35400; border-top-left-radius: 10px; border-top-right-radius: 15px;">Condition</div>
       <div class="card-body" placeholder="condition"></div>
     </div>
     </div>
   </div>
   <div>
 
+    <div class ="section">
+      <div id="display">
+        <div class="card mb-3">
+            <div class="card-header">Seasonal Display</div>
+            <div class="card-body" src=""></div>
+          </div>
+        </div>
+    </div>
+
 <div class ="section">
-  <div id="display">
+  <div id="animation1">
     <div class="card mb-3">
-        <div class="card-header">Seasonal Display</div>
-        <div class="card-body" src=""></div>
+      <iframe src="https://giphy.com/embed/DybTddgEZTPLW" min-width="400" height="auto" frameBorder="0"
+      class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/lionel-DybTddgEZTPLW">via GIPHY</a></p>
       </div>
- </div>
+    </div>
+</div>
 
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"

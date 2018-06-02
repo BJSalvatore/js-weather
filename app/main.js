@@ -20,7 +20,6 @@ var errorMessage = document.getElementById('errorMessage');
 
 // api variables
 var apiRequest:
-var url = "http://api.openweathermap.org/data/2.5/weather?zip=<zipCode>&us&appid=<appId>";
 var apiId = 4363e3e1747e40f10b2355eee16763f6;
 
 
@@ -87,19 +86,19 @@ function convertKtoC(kelvin) {
 	return Math.round(cel);
 }
 
-function displayImage(tempF) {
-
-	if (tempF > 85) {
-		weatherImage.src = 'https://goo.gl/c8VxVr';
-	}
-	else if (tempF > 65) {
-		weatherImage.src = 'https://goo.gl/WNV85G';
-	}
-	else if (tempF > 32) {
-		weatherImage.src = 'https://goo.gl/KAbVwR';
-	}
-	else {
-		weatherImage.src = 'https://goo.gl/a4mnmd';
-	}
-
-}
+// function displayImage(tempF) {
+//
+// 	if (tempF > 85) {
+// 		weatherImage.src = 'https://goo.gl/c8VxVr';
+// 	}
+// 	else if (tempF > 65) {
+// 		weatherImage.src = 'https://goo.gl/WNV85G';
+// 	}
+// 	else if (tempF > 32) {
+// 		weatherImage.src = 'https://goo.gl/KAbVwR';
+// 	}
+// 	else {
+// 		weatherImage.src = 'https://goo.gl/a4mnmd';
+// 	}
+//
+// }

@@ -1,8 +1,14 @@
 
 @import "node_modules/bootstrap/scss/bootstrap";
 
+@import url('https://fonts.googleapis.com/css?family=Coda|Merriweather|PT+Sans');
+
+/* font-family: 'Merriweather', serif;
+font-family: 'Coda', cursive;
+font-family: 'PT Sans', sans-serif; */
+
 body {
-	background-image: url("images/steampunkclock.jpg");
+	background-image: url("images/steampunkwallpaper.jpg");
 	background-repeat: no-repeat;
 	margin: 0 auto;
 }
@@ -15,6 +21,18 @@ body {
 	border-radius: 15px; */
 	}
 
+	button{
+		background-color:#000000;
+	  float: center;
+	  text-align: center;
+	  max-width: 120px;
+	  min-height: 40px;
+	  border-style: groove;
+	  border-radius: 10px;
+	  border-width: 2px;
+	  margin: 10px;
+	}
+
 h1{
   font-size: 36px;
   font-style: Coda;
@@ -23,14 +41,9 @@ h1{
   padding-top: 30px;
 }
 
-.card{
-  text-align: center;
-}
-
 .section{
-  /* min-height: 100px; */
   padding: 5px;
-  margin: 10px;
+  /* margin: 10px; */
   border-width: 3px;
   border-style: solid;
   border-style: groove;
@@ -39,9 +52,9 @@ h1{
 }
 
 .card{
+	text-align: center;
   min-height: 80px;
   padding: 5px;
-  background-color: ##EAECEE;
   border-width: 1px;
   border-style: solid;
   border-radius: 15px;
@@ -49,29 +62,45 @@ h1{
 }
 
 .card-header{
-	font-size: 18px;
+	font-size: 24px;
 	font-weight: bold;
-  font-family: "Coda Caption", Times, cursive;
-  font-family: Coda;
+  font-style: Merriweather;
 	border-width: 1px;
 }
 
 .card-body{
+	background-color: ##EAECEE;
   font-weight: normal;
+	font-size: 18px;
+	font-style: "PT Sans";
+
 }
 
-button{
-  float: center;
-  text-align: center;
-  max-width: 150px;
-  max-height: 40px;
-  border-style: groove;
-  border-radius: 10px;
-  border-width: 2px;
-  margin: 10px;
+iframe{
+	position:relative;
 }
-
 
 #input-form{
   text-align: center;
+}
+
+/* #error.card-header{
+	 background-color: #8B0000;
+} */
+/*
+#city.card-header{
+	 background-color: #9A12B3;
+}
+
+#temperature.card-header{
+	 background-color: #013243;
+}
+
+#condition.card-header{
+	 background-color: #800080;
+} */
+
+
+#display{
+	border-radius: 15px;
 }
