@@ -17,7 +17,7 @@ var errorMessage = document.getElementById('errorMessage');
 
 // api variables
 var apiRequest:
-var apiId = 4363e3e1747e40f10b2355eee16763f6;
+var apiId = "4363e3e1747e40f10b2355eee16763f6";
 
 // Waits for page to load before firing
 document.onreadystatechange = function() {
@@ -80,7 +80,7 @@ function convertKtoC(kelvin) {
 	return Math.round(cel);
 }
 
-// function displayImage(tempF) {
+function displayImage(tempF) {
 
 	if (tempF > 85) {
 		weatherImage.src = "images/hot-sun.jpg";

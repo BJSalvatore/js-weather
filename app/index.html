@@ -11,28 +11,29 @@
 </head>
 
 <body class="container">
-  <form class="mt-5 mb-5">
+  <form class="mt-3 mb-3">
     <div class="row justify-content-center mb-3">
       <h1>Weather Application</h1>
     </div>
 
 <div id="formRow ">
         <div class="leftColumn">
-        <input id="zipCode" type="input" class="form-control" placeholder="zipCode"></input>
+        <input id="zipCode" type="input" class="form-control" placeholder="Enter zipcode">
         <button id="weatherButton" type="button" class="form-control" onclick ="test"
         placeholder="Get Weather">Get Weather</button>
         </div>
 
         <div class="rightColumn">
-          <!-- <div class="photoHolder"> -->
-          <img src="images/knitting-309962.svg" max-width="80px"/>
+          <!-- <div class="photoHolder">
+          <img src="images/knitting-309962.svg" max-width="200px"/>
+          </div> -->
         </div>
  </div>
 
 <div class ="section">
     <div id="error">
       <div class="card mb-3">
-      <div class="card-header" style="background-color: #FC1501; border-top-left-radius: 15px; border-top-right-radius: 15px;">Error</div>
+      <div class="card-header" style="background-color: #FC1501; border-top-left-radius: 10px; border-top-right-radius: 10px;">Error</div>
       <div class="card-body" placeholder="errorMessage"></div>
     </div>
   </div>
@@ -42,7 +43,7 @@
 <div class ="section">
    <div class="card mb-3">
   <div id="city" style="font-size: 18px; font-family: Merriweather;">
-    <div class="card-header" style="background-color: #FF6103; border-top-left-radius: 15px; border-top-right-radius: 15px;">City</div>
+    <div class="card-header" style="background-color: #FF6103; border-top-left-radius: 10px; border-top-right-radius: 10px;">City</div>
       <div class="card-body" placeholder="city"</div>
   </div>
 </div>
@@ -52,7 +53,7 @@
 <div class ="section">
    <div class="card mb-3">
      <div id="temperature" style="font-size: 18px; font-family: Coda;">
-       <div class="card-header" style="background-color: #E9967A; border-top-left-radius: 15px; border-top-right-radius: 15px;">Temperature</div>
+       <div class="card-header" style="background-color: #E9967A; border-top-left-radius: 10px; border-top-right-radius: 10px;">Temperature</div>
         <div class="row align-items-center justify-content-center no-gutters">
           <div id="cityOutputK" class="card-body col text-center pt-3 pb-3" placeholder="cityOutputK"></div>
           <div id="cityOutputF" class="card-bodycol text-center pt-3 pb-3" placeholder="cityOutputF"></div>
@@ -65,7 +66,7 @@
 <div class ="section">
   <div class="card mb-3">
       <div id="condtion">
-        <div class="card-header" style="background-color: #b4656f; border-top-left-radius: 15px; border-top-right-radius: 15px;">Condition</div>
+        <div class="card-header" style="background-color: #b4656f; border-top-left-radius: 10px; border-top-right-radius: 10px;">Condition</div>
         <div class="card-body" placeholder="condition"></div>
     </div>
   </div>
