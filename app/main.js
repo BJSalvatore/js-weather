@@ -1,9 +1,6 @@
 // variables for input form
-var zipCode = getElementByID('zipCode');
-
-// Input form
 var weatherButton = document.getElementById('weatherButton');
-var zipInput = document.getElementById('zipInput');
+var zipInput = getElementByID('zipInput');
 
 // Output variables
 var output = document.getElementById('output');
@@ -22,8 +19,6 @@ var errorMessage = document.getElementById('errorMessage');
 var apiRequest:
 var apiId = 4363e3e1747e40f10b2355eee16763f6;
 
-
-
 // Waits for page to load before firing
 document.onreadystatechange = function() {
 	if (document.readyState == "interactive") {
@@ -33,9 +28,8 @@ document.onreadystatechange = function() {
 };
 
 function getWeather() {
-
 	// Set up url for fetching weather data.
-	var url = "http://api.openweathermap.org/data/2.5/weather?zip=<zipCode>&us&appid=<appId>";
+	var url= "http://api.openweathermap.org/data/2.5/weather?zip=<zipCode>&us&appid=<appId>";
 	url = url.replace("<zipCode>", zipInput.value);
 	url = url.replace("<appId>", appId);
 
@@ -87,18 +81,18 @@ function convertKtoC(kelvin) {
 }
 
 // function displayImage(tempF) {
-//
-// 	if (tempF > 85) {
-// 		weatherImage.src = 'https://goo.gl/c8VxVr';
-// 	}
-// 	else if (tempF > 65) {
-// 		weatherImage.src = 'https://goo.gl/WNV85G';
-// 	}
-// 	else if (tempF > 32) {
-// 		weatherImage.src = 'https://goo.gl/KAbVwR';
-// 	}
-// 	else {
-// 		weatherImage.src = 'https://goo.gl/a4mnmd';
-// 	}
-//
-// }
+
+	if (tempF > 85) {
+		weatherImage.src = "images/hot-sun.jpg";
+	}
+	else if (tempF > 65) {
+		weatherImage.src = "images/perfectweather.jpg";
+	}
+	else if (tempF > 32) {
+		weatherImage.src = "images/freezing-cold.jpeg";
+	}
+	else {
+		weatherImage.src="http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif";
+	}
+
+}

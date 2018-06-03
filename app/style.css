@@ -7,12 +7,15 @@
 font-family: 'Coda', cursive;
 font-family: 'PT Sans', sans-serif; */
 
-body {
-	max-width: 940px;
-	max-height: 680px;
+body.container {
+	background-image: url("images/knit-orange-cropped.jpg");
+	border-radius: 15px;
+	background-repeat: no-repeat;
+	max-width: 500px;
+	min-width: 350px;
+	height: 800px;
 	border-style: solid;
 	border-width: 6px;
-	border-radius: 15px;
 	/* max-width: 500px;
 	min-width: 350px;
 	height: 100%;
@@ -21,11 +24,10 @@ body {
 }
 
 .container {
-	background-image: url("images/knit-orange.jpg");
-	background-repeat: no-repeat;
+
 	max-width: 500px;
 	min-width: 350px;
-	height: 100%;
+	min-height: 800px;
 
 	}
 
@@ -112,11 +114,13 @@ body {
 
 }
 
-.formRow {
+#formRow {
     /* overflow: hidden; */
-		max-width: 500px;
+		min-height: 40px;
+		width: 50%;
+		/* max-width: 500px;
 		min-width: 350px;
-		height: auto;
+		height: auto; */
 }
 
 .leftColumn {
@@ -124,12 +128,12 @@ body {
 		background-color: black;
 }
 
-.photoHolder {
+/* .photoHolder {
 	width: 80px;
   height: auto;
-}
+} */
 
 .rightColumn {
-        float:right;
+        float:left;
 				background-color: white;
 }
