@@ -1,6 +1,6 @@
 <!doctype html>
-<html lang="en">
-
+<html>
+<lang lang="en">
 <head>
   <meta charset="utf-8">
 	<title>Weather Application</title>
@@ -10,35 +10,59 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body class="container">
-    <div id="input-form mb-3">
-      <h1><center>Weather Application</center></h1>
-        <form>
-          <div class="row justify-content-center">
-            <div class="col">
-              <input id="zipInput" type="input" class="form-control" placeholder="zipCode"></input>
-            </div>
-            <div class="col">
-              <button id="weatherButton" type="button" class="form-control" onclick ="test"
+<body class="container" width="100%" height="auto">
+  <form class="mt-5 mb-5">
+    <div class="row justify-content-center mb-3">
+      <h1>Weather Application</h1>
+    </div>
+
+      <div class="row justify-content-center">
+        <div class="col col-auto">
+            <input id="zipInput" type="input" class="form-control" placeholder="zipCode"></input>
+            <button id="weatherButton" type="button" class="form-control" onclick ="test"
               placeholder="Get Weather">Get Weather</button>
-            </div>
-            </div>
-        </form>
+        </div>
+      <div class="col col-auto">
+        <!-- <iframe src="http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif"/> -->
+            <!-- <button id="weatherButton" type="button" class="form-control" onclick ="test"
+              placeholder="Get Weather">Get Weather</button> -->
       </div>
+    </div>
+  </form>
+</div>
+
+
+<!-- <div class="top">
+   <div class="leftColumn">
+      <div class="form">
+        <input id="zipInput" type="input"
+        class="form-control" placeholder="zipCode"></input>
+      </div>
+   </div>
+   <div class="rightColumn">
+       <div>
+          <img src=”http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif” />
+       </div>
+       <!-- <div>
+           <span>Sometimes this is here</span>
+       </div> -->
+   <!-- </div>
+</div> --> -->
 
 <div class ="section">
     <div id="error">
       <div class="card mb-3">
-      <div class="card-header" style="background-color: #8B0000; border-top-left-radius: 10px; border-top-right-radius: 15px;">Error</div>
+      <div class="card-header" style="background-color: #FC1501; border-top-left-radius: 15px; border-top-right-radius: 15px;">Error</div>
       <div class="card-body" placeholder="errorMessage"></div>
     </div>
   </div>
-  </div>
+</div>
 
+<div id="output">
 <div class ="section">
    <div class="card mb-3">
   <div id="city" style="font-size: 18px; font-family: Merriweather;">
-    <div class="card-header" style="background-color: #013243; border-top-left-radius: 10px; border-top-right-radius: 15px;">City</div>
+    <div class="card-header" style="background-color: #FF6103; border-top-left-radius: 15px; border-top-right-radius: 15px;">City</div>
       <div class="card-body" placeholder="city"</div>
   </div>
 </div>
@@ -48,7 +72,7 @@
 <div class ="section">
    <div class="card mb-3">
   <div id="temperature" style="font-size: 18px; font-family: Coda;">
-    <div class="card-header" style="background-color: #9A12B3; border-top-left-radius: 10px; border-top-right-radius: 15px;">Temperature</div>
+    <div class="card-header" style="background-color: #E9967A; border-top-left-radius: 15px; border-top-right-radius: 15px;">Temperature</div>
     <div class="row align-items-center justify-content-center no-gutters">
       <div id="cityOutputK" class="card-body col text-center pt-3 pb-3" placeholder="cityOutputK"></div>
       <div id="cityOutputF" class="card-bodycol text-center pt-3 pb-3" placeholder="cityOutputF"></div>
@@ -60,32 +84,30 @@
 
 <div class ="section">
   <div class="card mb-3">
-  <div id="condtion">
-    <div class="card-header" style="background-color: #D35400; border-top-left-radius: 10px; border-top-right-radius: 15px;">Condition</div>
-      <div class="card-body" placeholder="condition"></div>
-    </div>
+      <div id="condtion">
+        <div class="card-header" style="background-color: #b4656f; border-top-left-radius: 15px; border-top-right-radius: 15px;">Condition</div>
+        <div class="card-body" placeholder="condition"></div>
     </div>
   </div>
-  <div>
-
-    <div class ="section">
-      <div id="display">
-        <div class="card mb-3">
-            <div class="card-header">Seasonal Display</div>
-            <div class="card-body" src=""></div>
-          </div>
-        </div>
-    </div>
+</div>
 
 <div class ="section">
-  <div id="animation1">
-    <div class="card mb-3">
-      <iframe src="https://giphy.com/embed/DybTddgEZTPLW" min-width="400" height="auto" frameBorder="0"
-      class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/lionel-DybTddgEZTPLW">via GIPHY</a></p>
+    <div id="display">
+      <div class="card mb-3">
+        <!-- <div class="card-header" style="background-color: #86af49; border-top-left-radius: 15px; border-top-right-radius: 15px;"">Seasonal Display</div> -->
+        <div class="card-body" src=""></div>
       </div>
     </div>
 </div>
 
+<!-- <div class ="section">
+  <div id="animation1">
+    <div class="card mb-3">
+      <img alt="" src="" id="weatherImage" width="300">
+    </div>
+  </div>
+</div> -->
+</div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
   integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -93,7 +115,6 @@
   integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
   integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-</body>
-
 <script src="main.js"</script>
+</body>
 </html>

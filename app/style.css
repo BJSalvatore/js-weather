@@ -8,8 +8,11 @@ font-family: 'Coda', cursive;
 font-family: 'PT Sans', sans-serif; */
 
 body {
-	background-image: url("images/steampunkwallpaper.jpg");
+	background-image: url("images/knit-orange.jpg");
 	background-repeat: no-repeat;
+	max-width: 100%;
+	min-width: 350px;
+	height: auto;
 	margin: 0 auto;
 }
 
@@ -23,37 +26,49 @@ body {
 
 	button{
 		background-color:#000000;
-	  float: center;
+	  float: left;
 	  text-align: center;
 	  max-width: 120px;
 	  min-height: 40px;
 	  border-style: groove;
 	  border-radius: 10px;
 	  border-width: 2px;
-	  margin: 10px;
+	  margin: 15px;
+	}
+
+	input{
+		background-color:#000000;
+		float: left;
+		text-align: center;
+		max-width: 120px;
+		min-height: 40px;
 	}
 
 h1{
-  font-size: 36px;
-  font-style: Coda;
-  color: blue;
+  font-size: 42px;
+  font-style: Merriweather;
+	font-weight: bolder;
   text-align: center;
-  padding-top: 30px;
+  padding-top: 10px;
+}
+
+#input-form{
+  text-align: center;
 }
 
 .section{
-  padding: 5px;
+  /* padding: 5px; */
   /* margin: 10px; */
-  border-width: 3px;
+  /* border-width: 3px;
   border-style: solid;
   border-style: groove;
   border-radius: 15px;
-  text-align: center;
+  text-align: center; */
 }
 
 .card{
 	text-align: center;
-  min-height: 80px;
+  max-height: 65px;
   padding: 5px;
   border-width: 1px;
   border-style: solid;
@@ -62,10 +77,12 @@ h1{
 }
 
 .card-header{
-	font-size: 24px;
+	max-height: 30px;
+	font-size: 18px;
 	font-weight: bold;
   font-style: Merriweather;
-	border-width: 1px;
+	padding: 4px;
+	/* border-width: 1px; */
 }
 
 .card-body{
@@ -76,31 +93,27 @@ h1{
 
 }
 
-iframe{
-	position:relative;
+
+
+/* .top {
+    overflow: hidden;
+    background: rgb( 240, 240, 240);
+    width: 300px;
 }
 
-#input-form{
-  text-align: center;
+.leftColumn {
+    float:left;
 }
 
-/* #error.card-header{
-	 background-color: #8B0000;
+.photoHolder {
+    width: 40px;
+    height: 50px;
+    background: rgb(200, 200, 245);
+}
+
+.rightColumn {
+        float:left;
+    width: 250px;
+    height: 400px;
+    background: rgb( 200, 244, 244);
 } */
-/*
-#city.card-header{
-	 background-color: #9A12B3;
-}
-
-#temperature.card-header{
-	 background-color: #013243;
-}
-
-#condition.card-header{
-	 background-color: #800080;
-} */
-
-
-#display{
-	border-radius: 15px;
-}
