@@ -1,6 +1,6 @@
 // variables for input form
 var weatherButton = document.getElementById('weatherButton');
-var zipInput = getElementByID('zipInput');
+var zipInput = document.getElementByID('zipInput');
 
 // Output variables
 var output = document.getElementById('output');
@@ -12,7 +12,7 @@ var condition = document.getElementById('condition');
 var weatherImage = document.getElementById('weatherImage');
 
 // Error variables
-var error = document.getElementById("error");
+var error = document.getElementById('error');
 var errorMessage = document.getElementById('errorMessage');
 
 // api variables
@@ -61,7 +61,6 @@ function catchResponse() {
 		condition.innerHTML = response.weather[0].description;
 		displayImage(convertKtoF(response.main.temp));
 		output.style.display = 'block';
-
 	}
 	else {
 		error.style.display = 'block';
