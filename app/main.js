@@ -16,8 +16,8 @@ var error = document.getElementById('error');
 var errorMessage = document.getElementById('errorMessage');
 
 // api variables
-var apiRequest:
-var apiId = "4363e3e1747e40f10b2355eee16763f6";
+var apiRequest;
+var appId = "4363e3e1747e40f10b2355eee16763f6";
 
 // Waits for page to load before firing
 document.onreadystatechange = function() {
