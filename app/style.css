@@ -6,39 +6,35 @@ font-family: 'Coda', cursive;
 font-family: 'PT Sans', sans-serif; */
 
 body{
-	background-image: url("images/knit-orange-lg.jpg");
 	background-repeat: no-repeat;
 	max-width: 500px;
 	min-width: 350px;
 	height: 800px;
-
-	border-radius: 15px;
-
-	border-style: solid;
-	border-width: 6px;
 }
 
+.container{
+	border-style: solid;
+	border-width: 1.5px;
+	border-radius: 15px;
+}
 
-.container {
-	max-width: 500px;
-	min-width: 350px;
-	height: 800px;
-
+.section{
+	text-align: center;
 }
 
 	h1{
+		font-style: Coda;
+		font-weight: 500;
 	  font-size: 42px;
-	  font-style: Merriweather;
-		font-weight: bolder;
 	  text-align: center;
 		margin: 10px;
 	}
 
-input{ float: left;
+input{
+	/* float: left; */
 	text-align: center;
-	max-width: 130px;
+	max-width: 80px;
 	min-height: 40px;
-	/* border-style: groove; */
 	border-radius: 10px;
 	border-width: 2px;
 	margin: 10px;
@@ -48,7 +44,7 @@ input{ float: left;
 		background:#D3D3D3;
 	  float: left;
 	  text-align: center;
-	  max-width: 120px;
+	  max-width: 80px;
 	  min-height: 40px;
 	  /* border-style: groove; */
 	  border-radius: 10px;
@@ -56,31 +52,13 @@ input{ float: left;
 	  margin: 10px;
 	}
 
-	#formRow{
+	#input-form{
 		column-count: 2;
 		text-align: center;
 		max-width: 500px;
 		min-width: 350px;
 		min-height: 40px;
 	}
-
-
-	.leftColumn {
-			width: 100%;
-			/* max-width: 250px; */
-	    float:left;
-	}
-
-	.rightColumn {
-			width: 0%;
-			/* max-width: 250px; */
-	    float:left;
-	}
-
-/* .photoHolder{
-	width: auto;
-	max-height: auto;
-} */
 
 .card{
 	text-align: center;
@@ -95,9 +73,9 @@ input{ float: left;
 	max-height: 30px;
 	font-size: 18px;
 	font-weight: bold;
-  font-style: Merriweather;
+  font-style: Coda;
 	padding: 4px;
-	/* border-width: 1px; */
+	border-width: 1px;
 }
 
 .card-body{
@@ -109,9 +87,9 @@ input{ float: left;
 }
 
 .display{
-	min-height: 160px;
+	align-content: center;
 	max-width: 500px;
-	/* min-width: 350px; */
+	min-height: 500px;
 	background-color:#EAECEE;
 	border: solid;
 	border-width: 2px;

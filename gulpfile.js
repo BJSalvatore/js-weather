@@ -12,15 +12,24 @@ gulp.task('copyhtml', function() {
 gulp.task('copyimages', function(){
   return gulp.src('app/images/*.+(png|jpg)')
   .pipe(gulp.dest('dist/images'))
-})
+});
+
+gulp.task('copyjs', function(){
+  return gulp.src('app/*.js')
+  .pipe(gulp.dest('dist/'))
+});
 
 // function to change sass code to css
 gulp.task('sass', function() {
 	return gulp.src('app/scss/*.scss')
 		.pipe(sass())
-		.pipe(gulp.dest('dist/css/'))
+		.pipe(gulp.dest('dist/css'))
+});
+
+gulp.task('watch', function() {
+	gulp.watch('app/**/*', ['copyhtml', 'copyimages', 'copyjs' 'sass'])
 });
 
 gulp.task('default', function(callback) {
-	runSequence(['sass', 'copycss'], callback)
+	runSequence(['sass', 'copycss', 'copyjs'], callback)
 });
