@@ -28,19 +28,16 @@ h1{
 	column-count: 2;
 	font-size: 18px;
 	text-align: center;
-	margin: 5px;
 }
+
+/* #shortRow{
+	max-width: 200px;
+} */
 
 #output{
 		font-style: Coda;
-		margin: 20px;
-}
-
-img{
-	max-width: 500px;
-	min-width: 350px;
-	/* max-height: 800px; */
-	height: auto;
+		margin-top: 10px;
+		margin-bottom: 20px;
 }
 
 input, button{
@@ -80,7 +77,7 @@ input, button{
 
 #photoFrame{
 	align-content: center;
-	min-height: 200px;
-	max-width: auto;
+	/* min-height: 200px;
+	max-width: auto; */
 	border-radius: 10px;
 }

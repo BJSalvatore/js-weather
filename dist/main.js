@@ -61,7 +61,7 @@ function catchResponse() {
 
 		var response = JSON.parse(apiRequest.responseText);
 
-		// error.style.display = 'none';
+		error.style.display = 'none';
 		cityOutput.innerHTML = response.name;
 		tempK.innerHTML = Math.round(response.main.temp) + ' K';
 		tempF.innerHTML = convertKtoF(response.main.temp) + '&deg; F';
@@ -92,24 +92,25 @@ function displayImage(tempF) {
 
 	// tries to match to either condition first
 	if(condition = 'rain'){
-		weatherImage.src = "../images/rain.jpg";
+		weatherImage.src = "images/rain.jpg";
 	}
 	else if (condition = 'snow'){
-		weatherImage.src = "../images/snow-car.jpeg";
+		weatherImage.src = "images/snow-car.jpeg";
 	}
  // if neither condition above matches,
  // image will be determined by temperature
 	else if (tempF > 85) {
-		weatherImage.src = "../images/hot-sun.jpg";
+		weatherImage.src = "images/hot-sun.jpg";
 	}
 	else if (tempF > 65) {
-		weatherImage.src = "../images/perfectweather.jpg";
+		weatherImage.src = "images/perfectweather.jpg";
 	}
 	else if (tempF > 32) {
-		weatherImage.src = "../images/freezing-cold.jpeg";
+		weatherImage.src = "images/freezing-cold.jpeg";
 	}
-	// else {
-	// 	weatherImage.src="http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif";
-	// }
+	else {
+		weatherImage.src = "images/sheep-animated-gif.gif";
+		// weatherImage.src="http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif";
+	}
 
 }

@@ -10,7 +10,7 @@ gulp.task('copyhtml', function() {
  });
 
 gulp.task('copyimages', function(){
-  return gulp.src('app/images/*.+(png|jpg)')
+  return gulp.src('app/images/*.+(png|jpg|gif)')
   .pipe(gulp.dest('dist/images'))
 });
 
@@ -20,14 +20,13 @@ gulp.task('copyjs', function(){
 });
 
 // function to change sass code to css
-gulp.task('sass', function() {
-	return gulp.src('app/scss/*.scss')
-		.pipe(sass())
-		.pipe(gulp.dest('dist/css'))
+gulp.task('copycss', function() {
+	return gulp.src('app/*.css')
+		.pipe(gulp.dest('dist/'))
 });
 
 gulp.task('watch', function() {
-	gulp.watch('app/**/*', ['copyhtml', 'copyimages', 'copyjs' 'sass'])
+	gulp.watch('app/**/*', ['copyhtml', 'copyimages', 'copyjs', 'copycss'])
 });
 
 gulp.task('default', function(callback) {
