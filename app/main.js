@@ -1,6 +1,7 @@
 var weatherButton = document.getElementById('weatherButton');
 var zipCode = document.getElementById('zipCode');
 
+
 // Output variables
 var output = document.getElementById('output');
 var cityOutput = document.getElementById('cityOutput');
@@ -29,6 +30,16 @@ document.onreadystatechange = function() {
 		// 	getWeather();
 		}
 };
+
+var myWindow = document.getElementById('myContainer');
+var resizeButton = document.getElementById('resizeButton');
+
+resizeButton.onclick = resizeWin;
+
+function resizeWin() {
+	myWindow.resizeTo(500, 800);
+	myWindow.focus();
+}
 
 // function for retrieving information from api
 function getWeather() {
@@ -62,6 +73,8 @@ function catchResponse() {
 	if (apiRequest.statusText === "OK") {
 
 		var response = JSON.parse(apiRequest.responseText);
+		console.log(response);
+
 
 		error.style.display = 'none';
 		cityOutput.innerHTML = response.name;
@@ -95,6 +108,12 @@ function displayImage(condition,tempF) {
 	if(condition.includes('rain')){
 		weatherImage.src = "images/rain.jpg";
 		}
+	else if (condition.includes('thunderstorm')){
+		weatherImage.src = "images/thunderstorm.jpg";
+	}
+	else if (condition.includes('overcast', 'cloudy')){
+		weatherImage.src = "images/cloudy.jpeg";
+	}
 	else if (condition.includes('snow')){
 		weatherImage.src = "images/snow-car.jpeg";
 		}
@@ -103,12 +122,13 @@ function displayImage(condition,tempF) {
 	else if (tempF > 85 && !condition.includes('rain')) {
 		weatherImage.src = "images/hot-sun.jpg";
 		}
-	else if ((tempF > 65 || condition.includes('clear sky')) && !condition.includes('rain')) {
+	else if ((tempF > 65 && tempF < 85 || condition.includes('clear sky')) && !condition.includes('rain')) {
 		weatherImage.src = "images/perfectweather.jpg";
 		}
 	else if (tempF < 32 || !condition.includes('snow')) {
 		weatherImage.src = "images/freezing-cold.jpeg";
-	} else {
+	// else if (errorMessage)
+} else {
 		weatherImage.src = "images/sheep-animated-gif.gif";
 		// weatherImage.src="http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif";
 	}
