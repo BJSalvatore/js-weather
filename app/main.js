@@ -62,6 +62,7 @@ function catchResponse() {
 	if (apiRequest.statusText === "OK") {
 
 		var response = JSON.parse(apiRequest.responseText);
+		console.log(response);
 
 		error.style.display = 'none';
 		cityOutput.innerHTML = response.name;
@@ -69,7 +70,7 @@ function catchResponse() {
 		tempF.innerHTML = convertKtoF(response.main.temp) + '&deg; F';
 		tempC.innerHTML = convertKtoC(response.main.temp) + '&deg; C';
 		condition.innerHTML = response.weather[0].description;
-		displayImage(convertKtoF(response.main.temp));
+		displayImage(response.weather[0].description, convertKtoF(response.main.temp));
 		output.style.display = 'block';
 	}
 	else {
@@ -90,29 +91,26 @@ function convertKtoC(kelvin) {
 	return Math.round(cel);
 }
 
-function displayImage(tempF) {
-
+function displayImage(condition,tempF) {
 	// tries to match to either condition first
-	if(condition = 'rain'){
+	if(condition.includes('rain')){
 		weatherImage.src = "images/rain.jpg";
-	}
-	else if (condition = 'snow'){
+		}
+	else if (condition.includes('snow')){
 		weatherImage.src = "images/snow-car.jpeg";
-	}
+		}
  // if neither condition above matches,
  // image will be determined by temperature
-	else if (tempF > 85) {
+	else if (tempF > 85 && !condition.includes('rain')) {
 		weatherImage.src = "images/hot-sun.jpg";
-	}
-	else if (tempF > 65) {
+		}
+	else if ((tempF > 65 || condition.includes('clear sky')) && !condition.includes('rain')) {
 		weatherImage.src = "images/perfectweather.jpg";
-	}
-	else if (tempF > 32) {
+		}
+	else if (tempF < 32 || !condition.includes('snow')) {
 		weatherImage.src = "images/freezing-cold.jpeg";
-	}
-	else {
+	} else {
 		weatherImage.src = "images/sheep-animated-gif.gif";
 		// weatherImage.src="http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif";
 	}
-
 }

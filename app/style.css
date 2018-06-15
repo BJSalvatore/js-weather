@@ -77,6 +77,8 @@ input, button{
 
 #photoFrame{
 	align-content: center;
+	width: auto;
+	height: auto;
 	/* min-height: 200px;
 	max-width: auto; */
 	border-radius: 10px;
