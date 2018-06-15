@@ -9,66 +9,52 @@
   <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 
-<body class="container" background="images/knit-orange-lg.jpg">
-      <h1>Weather Application</h1>
-<div id="input-form">
-    <form class="justify-content-center mt-3 mb-3">
-      <input id="zipCode" type="input" class="form-control" placeholder="Enter zipcode"></input>
-      <button id='weatherButton' type="button" class="btn">Get Weather</button>
+<body background="images/knit-orange-lg.jpg">
+<h1>Weather Application</h1>
+<div class="container">
+  <form id="input-form" class="row justify-content-center mt-3 mb-3">
+      <div>
+        <input id="zipCode" type="input"  placeholder="Enter zipcode"></input>
+      </div>
+      <div>
+        <button id='weatherButton' type="button" >Get Weather</button>
+      </div>
   </form>
-</div>
-
-<div class ="section">
-    <!-- <div id="error"> -->
-      <div class="card mb-3">
-      <div class="card-header" style="background-color: #FC1501; border-top-left-radius: 15px; border-top-right-radius: 15px;">Error</div>
-      <div id="errorMessage" class="card-body"></div>
-    <!-- </div> -->
-  </div>
-</div>
 
 <div id="output">
-    <div class ="section">
-      <div class="card mb-3">
-        <div id="city" style="font-size: 18px; font-family: Merriweather;">
-        <div class="card-header" style="background-color: #FF6103; border-top-left-radius: 15px; border-top-right-radius: 15px;">City</div>
-        <div id="cityOutput" class="card-body text-align: center"></div>
-        </div>
-    </div>
-  </div>
-
-
-  <div class ="section">
-    <div class="card mb-3" style="font-size: 18px; font-family: Merriweather;">
-      <!-- <div id="temperature" style="font-size: 18px; font-family: Coda;"> -->
-       <div class="card-header" style="background-color: #E9967A; border-top-left-radius: 15px; border-top-right-radius: 15px;">Temperature</div>
-        <div class="row align-items-center justify-content-center no-gutters">
-          <div id="temperatureOutputK" class="card-body col pt-3 pb-3"></div>
-          <div id="temperatureOutputF" class="card-body col pt-3 pb-3"></div>
-          <div id="temperatureOutputC" class="card-body col text-center pt-3 pb-3"></div>
-        </div>
-      </div>
-    <!-- </div> -->
-  </div>
-
-  <div class ="section">
-    <div class="card mb-3">
-      <!-- <div id="condtion"> -->
-        <div class="card-header" style="background-color: #b4656f; border-top-left-radius: 15px; border-top-right-radius: 15px;">Condition</div>
-        <div id="condition" class="card-body"></div>
-      <!-- </div> -->
-    </div>
-  </div>
-
-  <div class ="section">
   <div class="card mb-3">
-    <div class="display mb-3" style="border-top-left-radius: 15px; border-top-right-radius: 15px">
-      <img alt="" src="" id="weatherImage" >
+      <div class="card-header" style="background-color: #FC1501; border-top-left-radius: 10px; border-top-right-radius: 10px;">Error</div>
+      <div id="errorMessage" class="card-body"></div>
+  </div>
+
+  <div class="card mb-3">
+      <div id="city">
+        <div class="card-header" style="background-color: #FF6103; border-top-left-radius: 10px; border-top-right-radius: 10px;">City</div>
+        <div id="cityOutput" class="card-body text-align: center"></div>
+      </div>
+  </div>
+
+  <div class="card mb-3">
+    <div class="card-header" style="background-color: #E9967A; border-top-left-radius: 10px; border-top-right-radius: 10px;">Temperature</div>
+      <div class="row align-items-center justify-content-center no-gutters">
+        <div id="temperatureOutputK" class="card-body col pt-3 pb-3"></div>
+        <div id="temperatureOutputF" class="card-body col pt-3 pb-3"></div>
+        <div id="temperatureOutputC" class="card-body col text-center pt-3 pb-3"></div>
+      </div>
+  </div>
+
+    <div class="card mb-3">
+        <div class="card-header" style="background-color: #b4656f; border-top-left-radius: 10px; border-top-right-radius: 10px;">Condition</div>
+        <div id="condition" class="card-body"></div>
     </div>
-  <!-- </div> -->
+
+    <div class="card mb-3" style="min-height: 220px;">
+      <div id="photoFrame" class="pt-5 pb-5">
+        <img alt="" src="" id="weatherImage"></img>
+      </div>
+    </div>
   </div>
 </div>
-
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
 integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 <script src="main.js"></script>

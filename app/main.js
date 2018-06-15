@@ -108,8 +108,9 @@ function displayImage(tempF) {
 	else if (tempF > 32) {
 		weatherImage.src = "../images/freezing-cold.jpeg";
 	}
-	// else {
-	// 	weatherImage.src="http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif";
-	// }
+	else {
+		weatherImage.src = "../sheep-animated-gif.gif";
+		// weatherImage.src="http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif";
+	}
 
 }
