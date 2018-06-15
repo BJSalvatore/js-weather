@@ -1,72 +1,83 @@
-@import url("https://fonts.googleapis.com/css?family=Coda|Merriweather|PT+Sans");
+
+@import url('https://fonts.googleapis.com/css?family=Coda|Merriweather|PT+Sans');
+
 /* font-family: 'Merriweather', serif;
 font-family: 'Coda', cursive;
 font-family: 'PT Sans', sans-serif; */
-body {
-  background-repeat: no-repeat;
-  max-width: 500px;
-  min-width: 350px;
-  align-content: center;
-  /* max-height: 800px; */
-  height: auto;
-  position: relative; }
 
-h1 {
-  margin-top: 15px;
-  text-align: center;
-  font-family: Merriweather;
-  font-weight: 600;
-  position: relative; }
+body{
+	background-repeat: no-repeat;
+	max-width: 500px;
+	min-width: 350px;
+	align-content: center;
+	/* max-height: 800px; */
+	height: auto;
+	position: relative;
+}
 
-#input-form {
-  font-style: Coda;
-  column-count: 2;
-  font-size: 18px;
-  text-align: center; }
+h1{
+	margin-top: 15px;
+	text-align: center;
+	font-family: Merriweather;
+	font-weight: 600;
+	position:relative;
+}
 
-#output {
-  font-style: Coda;
-  margin-top: 10px;
-  margin-bottom: 20px; }
+#input-form{
+	font-style: Coda;
+	column-count: 2;
+	font-size: 18px;
+	text-align: center;
+}
 
-img {
-  max-width: 500px;
-  min-width: 350px;
-  /* max-height: 800px; */
-  height: auto; }
+/* #shortRow{
+	max-width: 200px;
+} */
 
-input, button {
-  text-align: center;
-  min-width: 100px;
-  min-height: 40px;
-  border-radius: 10px;
-  border-style: outset;
-  border-width: 4px;
-  margin: 10px; }
+#output{
+		font-style: Coda;
+		margin-top: 10px;
+		margin-bottom: 20px;
+}
 
-input {
-  float: left; }
+input, button{
+	  text-align: center;
+	  min-width: 100px;
+	  min-height: 40px;
+	  border-radius: 10px;
+		border-style: outset;
+	  border-width: 4px;
+	  margin: 10px;
+	}
 
-button {
-  float: right;
-  background: #D3D3D3; }
+	input{
+		float: left;
+	}
 
-.card-header {
-  max-height: 30px;
-  font-size: 18px;
-  font-weight: bold;
-  padding: 4px; }
+	button{
+		float: right;
+		background:#D3D3D3;
+	}
 
-.card {
-  text-align: center;
+	.card-header{
+		max-height: 30px;
+		font-size: 18px;
+		font-weight: bold;
+		padding: 4px;
+	}
+
+.card{
+	text-align: center;
   max-height: 85px;
   padding: 5px;
-  border: solid;
-  border-width: 3px;
-  border-radius: 15px; }
+	border: solid;
+	border-width: 3px;
+	border-radius: 15px;
+}
 
-#photoFrame {
-  align-content: center;
-  min-height: 200px;
-  max-width: auto;
-  border-radius: 10px; }
+#photoFrame{
+	align-content: center;
+	/* min-height: 200px;
+	max-width: auto; */
+	border-radius: 10px;
+}

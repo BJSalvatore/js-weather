@@ -24,34 +24,35 @@
 <div id="error" style="display: none;">
   <div class="card mb-3">
       <div class="card-header" style="background-color: #FC1501; border-top-left-radius: 10px; border-top-right-radius: 10px;">Error</div>
-      <div id="errorMessage" class="card-body"></div>
+      <div id="errorMessage" class="card-body pt-3 pb-3"></div>
   </div>
 </div>
 <div id="output">
   <div class="card mb-3">
       <div id="city">
         <div class="card-header" style="background-color: #FF6103; border-top-left-radius: 10px; border-top-right-radius: 10px;">City</div>
-        <div id="cityOutput" class="card-body text-align: center"></div>
+        <div id="cityOutput" class="card-body pt-3 pb-3"></div>
       </div>
   </div>
 
   <div class="card mb-3">
     <div class="card-header" style="background-color: #E9967A; border-top-left-radius: 10px; border-top-right-radius: 10px;">Temperature</div>
-      <div class="row align-items-center justify-content-center no-gutters">
-        <div id="temperatureOutputK" class="card-body col pt-3 pb-3"></div>
-        <div id="temperatureOutputF" class="card-body col pt-3 pb-3"></div>
-        <div id="temperatureOutputC" class="card-body col text-center pt-3 pb-3"></div>
+      <!-- <div id="shortRow"> -->
+      <div class="row justify-content-center no-gutters">
+        <div id="temperatureOutputK" class="card-body col pt-3 pb-3" style="width: 70px;"></div>
+        <div id="temperatureOutputF" class="card-body col pt-3 pb-3" style="width: 70px;"></div>
+        <div id="temperatureOutputC" class="card-body col pt-3 pb-3" style="width: 70px;"></div>
       </div>
-  </div>
+    </div>
 
     <div class="card mb-3">
         <div class="card-header" style="background-color: #b4656f; border-top-left-radius: 10px; border-top-right-radius: 10px;">Condition</div>
-        <div id="condition" class="card-body"></div>
+        <div id="condition" class="card-body pt-3 pb-3"></div>
     </div>
 
-    <div class="card mb-3" style="min-height: 220px;">
-      <div id="photoFrame" class="pt-5 pb-5">
-        <img alt="" src="images/sheep-animated-gif.gif" id="weatherImage"></img>
+    <div class="card mb-3" style="min-height: 280px;">
+      <div id="photoFrame">
+        <img class="img-responsive" alt="" src="images/sheep-animated-gif.gif" id="weatherImage"></img>
       </div>
     </div>
   </div>

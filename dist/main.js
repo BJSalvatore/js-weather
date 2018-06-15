@@ -25,7 +25,9 @@ document.onreadystatechange = function() {
 	if (document.readyState == "interactive") {
 		// Initialize your application or run some code.
 		weatherButton.onclick = getWeather;
-	}
+		// if(weatherButton.onclick || input.keyCode === 13){
+		// 	getWeather();
+		}
 };
 
 // function for retrieving information from api
