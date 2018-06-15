@@ -10,7 +10,6 @@ body{
 	max-width: 500px;
 	min-width: 350px;
 	align-content: center;
-	/* max-height: 800px; */
 	height: auto;
 	position: relative;
 }
@@ -29,10 +28,6 @@ h1{
 	font-size: 18px;
 	text-align: center;
 }
-
-/* #shortRow{
-	max-width: 200px;
-} */
 
 #output{
 		font-style: Coda;
@@ -75,9 +70,11 @@ input, button{
 	border-radius: 15px;
 }
 
+img{
+	max-width: 280px;
+}
+
 #photoFrame{
 	align-content: center;
-	/* min-height: 200px;
-	max-width: auto; */
 	border-radius: 10px;
 }

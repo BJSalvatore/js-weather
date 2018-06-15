@@ -1,6 +1,6 @@
 var weatherButton = document.getElementById('weatherButton');
 var zipCode = document.getElementById('zipCode');
-console.log("weatherbutton file works");
+
 // Output variables
 var output = document.getElementById('output');
 var cityOutput = document.getElementById('cityOutput');
@@ -62,7 +62,6 @@ function catchResponse() {
 	if (apiRequest.statusText === "OK") {
 
 		var response = JSON.parse(apiRequest.responseText);
-		console.log(response);
 
 		error.style.display = 'none';
 		cityOutput.innerHTML = response.name;

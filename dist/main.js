@@ -107,7 +107,7 @@ function displayImage(tempF) {
 	else if (tempF > 65) {
 		weatherImage.src = "images/perfectweather.jpg";
 	}
-	else if (tempF > 32) {
+	else if (tempF < 32) {
 		weatherImage.src = "images/freezing-cold.jpeg";
 	}
 	else {
