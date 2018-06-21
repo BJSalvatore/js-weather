@@ -1,6 +1,19 @@
 var weatherButton = document.getElementById('weatherButton');
 var zipCode = document.getElementById('zipCode');
 
+var enterWeather = document.getElementById('weatherButton');
+
+// Execute a function when the user releases a key on the keyboard
+weatherButton.addEventListener("keyup", function(getWeather) {
+  // Cancel the default action, if needed
+  event.preventDefault();
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the button element with a click
+    document.getElementById("weatherButton").click();
+  }
+});
+
 
 // Output variables
 var output = document.getElementById('output');
@@ -88,6 +101,11 @@ function catchResponse() {
 	else {
 		error.style.display = 'block';
 		errorMessage.innerHTML = apiRequest.statusText;
+    document.getElementById("cityOutput").reset();
+    document.getElementById("temperatureOutputK").reset();
+    document.getElementById("temperatureOutputF").reset();
+    document.getElementById("temperatureOutputC").reset();
+    document.getElementById("condition").reset();
 	}
 
 }

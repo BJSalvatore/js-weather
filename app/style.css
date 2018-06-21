@@ -16,6 +16,8 @@ body{
 }
 
 h1{
+	color: #ffff;
+  text-shadow: 2px 2px #000000;
 	margin-top: 15px;
 	text-align: center;
 	font-family: Merriweather;
