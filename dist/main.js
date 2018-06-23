@@ -1,6 +1,39 @@
+var myWindow = document.getElementById('myContainer');
+var resizeButton = document.getElementById('resizeButton');
+
+
+// // window.onloadwindow.resizeTo(500, 800);
+// source.onopen = function() {
+//   myWindow.resizeTo(500, 800);
+//     // document.getElementById("myH1").innerHTML = "Getting server updates";
+// };
+//
+//
+// resizeButton.onclick = resizeWin;
+//
+// function resizeWin() {
+// 	myWindow.resizeTo(500, 800);
+// 	myWindow.focus();
+// }
+
+
 var weatherButton = document.getElementById('weatherButton');
 var zipCode = document.getElementById('zipCode');
-console.log("weatherbutton file works");
+
+var enterWeather = document.getElementById('weatherButton');
+
+// Execute a function when the user releases a key on the keyboard
+weatherButton.addEventListener("keyup", function(getWeather) {
+  // Cancel the default action, if needed
+  event.preventDefault();
+  // Number 13 is the "Enter" key on the keyboard
+  if (event.keyCode === 13) {
+    // Trigger the getWeather function by enter key
+    getWeather();
+  }
+});
+
+
 // Output variables
 var output = document.getElementById('output');
 var cityOutput = document.getElementById('cityOutput');
@@ -29,6 +62,7 @@ document.onreadystatechange = function() {
 		// 	getWeather();
 		}
 };
+
 
 // function for retrieving information from api
 function getWeather() {
@@ -62,6 +96,7 @@ function catchResponse() {
 	if (apiRequest.statusText === "OK") {
 
 		var response = JSON.parse(apiRequest.responseText);
+		console.log(response);
 
 		error.style.display = 'none';
 		cityOutput.innerHTML = response.name;
@@ -69,15 +104,29 @@ function catchResponse() {
 		tempF.innerHTML = convertKtoF(response.main.temp) + '&deg; F';
 		tempC.innerHTML = convertKtoC(response.main.temp) + '&deg; C';
 		condition.innerHTML = response.weather[0].description;
-		displayImage(convertKtoF(response.main.temp));
+		displayImage(response.weather[0].description, convertKtoF(response.main.temp));
 		output.style.display = 'block';
 	}
+  else if (error == 'Bad Request'){
+    resetForm();
+  }
 	else {
 		error.style.display = 'block';
 		errorMessage.innerHTML = apiRequest.statusText;
+    resetForm();
 	}
 
 }
+
+  function resetForm() {
+    // document.getElementById("output").reset();
+    document.getElementById("cityOutput").reset();
+    document.getElementById("temperatureOutputK").reset();
+    document.getElementById("temperatureOutputF").reset();
+    document.getElementById("temperatureOutputC").reset();
+    document.getElementById("condition").reset();
+    displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
+  }
 
 // funtions to calculate temperature conversions
 function convertKtoF(kelvin) {
@@ -90,29 +139,42 @@ function convertKtoC(kelvin) {
 	return Math.round(cel);
 }
 
-function displayImage(tempF) {
-
+function displayImage(condition,tempF) {
 	// tries to match to either condition first
-	if(condition = 'rain'){
+	if(condition.includes('rain')){
 		weatherImage.src = "images/rain.jpg";
+		}
+	else if (condition.includes('thunderstorm')){
+		weatherImage.src = "images/thunderstorm.jpg";
 	}
-	else if (condition = 'snow'){
+	else if (condition.includes('overcast', 'cloudy')){
+		weatherImage.src = "images/cloudy.jpeg";
+  }
+    else if (condition.includes('mist')){
+  		weatherImage.src = "images/mist.jpg";
+	}
+  else if (condition.includes('drizzle')){
+    weatherImage.src = "images/drizzle.jpg";
+  }
+  else if (condition.includes('haze')){
+    weatherImage.src = "images/Hazy-weather.jpg";
+}
+	else if (condition.includes('snow')){
 		weatherImage.src = "images/snow-car.jpeg";
-	}
+		}
  // if neither condition above matches,
  // image will be determined by temperature
-	else if (tempF > 85) {
+	else if (tempF > 85 && !condition.includes('rain')) {
 		weatherImage.src = "images/hot-sun.jpg";
-	}
-	else if (tempF > 65) {
+		}
+	else if ((tempF > 65 && tempF < 85 || condition.includes('clear sky')) && !condition.includes('rain')) {
 		weatherImage.src = "images/perfectweather.jpg";
-	}
-	else if (tempF < 32) {
+		}
+	else if (tempF < 32 || !condition.includes('snow')) {
 		weatherImage.src = "images/freezing-cold.jpeg";
-	}
-	else {
+	// else if (errorMessage)
+} else {
 		weatherImage.src = "images/sheep-animated-gif.gif";
 		// weatherImage.src="http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif";
 	}
-
 }

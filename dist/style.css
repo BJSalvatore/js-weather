@@ -10,16 +10,23 @@ body{
 	max-width: 500px;
 	min-width: 350px;
 	align-content: center;
+	/* max-height: 800px; */
 	height: auto;
 	position: relative;
 }
 
 h1{
+	color: #ffff;
+  text-shadow: 2px 2px #000000;
 	margin-top: 15px;
 	text-align: center;
 	font-family: Merriweather;
 	font-weight: 600;
 	position:relative;
+}
+
+.container{
+	position: relative;
 }
 
 #input-form{
@@ -70,11 +77,11 @@ input, button{
 	border-radius: 15px;
 }
 
-img{
-	max-width: 280px;
-}
-
 #photoFrame{
 	align-content: center;
+	width: auto;
+	height: auto;
+	/* min-height: 200px;
+	max-width: auto; */
 	border-radius: 10px;
 }

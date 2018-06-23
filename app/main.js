@@ -1,3 +1,22 @@
+var myWindow = document.getElementById('myContainer');
+var resizeButton = document.getElementById('resizeButton');
+
+
+// // window.onloadwindow.resizeTo(500, 800);
+// source.onopen = function() {
+//   myWindow.resizeTo(500, 800);
+//     // document.getElementById("myH1").innerHTML = "Getting server updates";
+// };
+//
+//
+// resizeButton.onclick = resizeWin;
+//
+// function resizeWin() {
+// 	myWindow.resizeTo(500, 800);
+// 	myWindow.focus();
+// }
+
+
 var weatherButton = document.getElementById('weatherButton');
 var zipCode = document.getElementById('zipCode');
 
@@ -9,8 +28,8 @@ weatherButton.addEventListener("keyup", function(getWeather) {
   event.preventDefault();
   // Number 13 is the "Enter" key on the keyboard
   if (event.keyCode === 13) {
-    // Trigger the button element with a click
-    document.getElementById("weatherButton").click();
+    // Trigger the getWeather function by enter key
+    getWeather();
   }
 });
 
@@ -44,15 +63,6 @@ document.onreadystatechange = function() {
 		}
 };
 
-var myWindow = document.getElementById('myContainer');
-var resizeButton = document.getElementById('resizeButton');
-
-resizeButton.onclick = resizeWin;
-
-function resizeWin() {
-	myWindow.resizeTo(500, 800);
-	myWindow.focus();
-}
 
 // function for retrieving information from api
 function getWeather() {
@@ -88,7 +98,6 @@ function catchResponse() {
 		var response = JSON.parse(apiRequest.responseText);
 		console.log(response);
 
-
 		error.style.display = 'none';
 		cityOutput.innerHTML = response.name;
 		tempK.innerHTML = Math.round(response.main.temp) + ' K';
@@ -98,17 +107,26 @@ function catchResponse() {
 		displayImage(response.weather[0].description, convertKtoF(response.main.temp));
 		output.style.display = 'block';
 	}
+  else if (error == 'Bad Request'){
+    resetForm();
+  }
 	else {
 		error.style.display = 'block';
 		errorMessage.innerHTML = apiRequest.statusText;
+    resetForm();
+	}
+
+}
+
+  function resetForm() {
+    // document.getElementById("output").reset();
     document.getElementById("cityOutput").reset();
     document.getElementById("temperatureOutputK").reset();
     document.getElementById("temperatureOutputF").reset();
     document.getElementById("temperatureOutputC").reset();
     document.getElementById("condition").reset();
-	}
-
-}
+    displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
+  }
 
 // funtions to calculate temperature conversions
 function convertKtoF(kelvin) {
@@ -131,7 +149,16 @@ function displayImage(condition,tempF) {
 	}
 	else if (condition.includes('overcast', 'cloudy')){
 		weatherImage.src = "images/cloudy.jpeg";
+  }
+    else if (condition.includes('mist')){
+  		weatherImage.src = "images/mist.jpg";
 	}
+  else if (condition.includes('drizzle')){
+    weatherImage.src = "images/drizzle.jpg";
+  }
+  else if (condition.includes('haze')){
+    weatherImage.src = "images/Hazy-weather.jpg";
+}
 	else if (condition.includes('snow')){
 		weatherImage.src = "images/snow-car.jpeg";
 		}
