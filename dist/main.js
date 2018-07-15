@@ -84,7 +84,7 @@ function getWeather() {
 }
 
 // sets up error response
-function httpRequestOnError() {
+function apiRequest.onerror {
 	output.style.display = 'none';
 	errorMessage.innerHTML = 'There was a problem reaching the weather API. Try again later.'
 	error.style.display = 'block';
@@ -108,25 +108,26 @@ function catchResponse() {
 		output.style.display = 'block';
 	}
   else if (error == 'Bad Request'){
-    resetForm();
+      error.style.display = 'block';
+      errorMessage.innerHTML = apiRequest.statusText;
+      displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
   }
 	else {
 		error.style.display = 'block';
 		errorMessage.innerHTML = apiRequest.statusText;
-    resetForm();
 	}
 
 }
 
-  function resetForm() {
+  // function resetForm() {
     // document.getElementById("output").reset();
-    document.getElementById("cityOutput").reset();
-    document.getElementById("temperatureOutputK").reset();
-    document.getElementById("temperatureOutputF").reset();
-    document.getElementById("temperatureOutputC").reset();
-    document.getElementById("condition").reset();
-    displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
-  }
+    // document.getElementById("cityOutput").reset();
+    // document.getElementById("temperatureOutputK").reset();
+    // document.getElementById("temperatureOutputF").reset();
+    // document.getElementById("temperatureOutputC").reset();
+    // document.getElementById("condition").reset();
+
+  // }
 
 // funtions to calculate temperature conversions
 function convertKtoF(kelvin) {

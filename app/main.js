@@ -85,8 +85,7 @@ function getWeather() {
 
 // sets up error response
 function httpRequestOnError() {
-	output.style.display = 'none';
-	errorMessage.innerHTML = 'There was a problem reaching the weather API. Try again later.'
+	errorMessage.innerHTML = 'There was a problem. Try again later.'
 	error.style.display = 'block';
 }
 
@@ -99,34 +98,38 @@ function catchResponse() {
 		console.log(response);
 
 		error.style.display = 'none';
+    output.style.display = 'block';
 		cityOutput.innerHTML = response.name;
 		tempK.innerHTML = Math.round(response.main.temp) + ' K';
 		tempF.innerHTML = convertKtoF(response.main.temp) + '&deg; F';
 		tempC.innerHTML = convertKtoC(response.main.temp) + '&deg; C';
 		condition.innerHTML = response.weather[0].description;
 		displayImage(response.weather[0].description, convertKtoF(response.main.temp));
-		output.style.display = 'block';
+
 	}
   else if (error == 'Bad Request'){
-    resetForm();
+    	error.style.display = 'block';
+  		errorMessage.innerHTML = apiRequest.statusText;
+      // resetForm();
   }
 	else {
 		error.style.display = 'block';
 		errorMessage.innerHTML = apiRequest.statusText;
-    resetForm();
+    // resetForm();
+    // displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
 	}
 
 }
 
-  function resetForm() {
-    // document.getElementById("output").reset();
-    document.getElementById("cityOutput").reset();
-    document.getElementById("temperatureOutputK").reset();
-    document.getElementById("temperatureOutputF").reset();
-    document.getElementById("temperatureOutputC").reset();
-    document.getElementById("condition").reset();
-    displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
-  }
+  // function resetForm() {
+  //
+  //   document.getElementById("output").reset();
+  //   document.getElementById("cityOutput").reset();
+  //   document.getElementById("temperatureOutputK").reset();
+  //   document.getElementById("temperatureOutputF").reset();
+  //   document.getElementById("temperatureOutputC").reset();
+  //   document.getElementById("condition").reset();
+  // }
 
 // funtions to calculate temperature conversions
 function convertKtoF(kelvin) {
@@ -162,6 +165,9 @@ function displayImage(condition,tempF) {
 	else if (condition.includes('snow')){
 		weatherImage.src = "images/snow-car.jpeg";
 		}
+  else if (httpRequestOnError()){
+    displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
+  }
  // if neither condition above matches,
  // image will be determined by temperature
 	else if (tempF > 85 && !condition.includes('rain')) {
