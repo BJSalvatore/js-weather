@@ -35,7 +35,7 @@ weatherButton.addEventListener("keyup", function(getWeather) {
 
 
 // Output variables
-var output = document.getElementById('output');
+// var output = document.getElementById('output');
 var cityOutput = document.getElementById('cityOutput');
 var tempK = document.getElementById('temperatureOutputK');
 var tempF = document.getElementById('temperatureOutputF');
@@ -84,9 +84,9 @@ function getWeather() {
 }
 
 // sets up error response
-function apiRequest.onerror {
-	output.style.display = 'none';
-	errorMessage.innerHTML = 'There was a problem reaching the weather API. Try again later.'
+function httpRequestOnError() {
+  errorMessage.innerHTML = 'There was a problem. Try again later.'
+  output.style.display = 'none';
 	error.style.display = 'block';
 }
 
@@ -99,35 +99,39 @@ function catchResponse() {
 		console.log(response);
 
 		error.style.display = 'none';
+    output.style.display = 'block';
 		cityOutput.innerHTML = response.name;
 		tempK.innerHTML = Math.round(response.main.temp) + ' K';
 		tempF.innerHTML = convertKtoF(response.main.temp) + '&deg; F';
 		tempC.innerHTML = convertKtoC(response.main.temp) + '&deg; C';
 		condition.innerHTML = response.weather[0].description;
 		displayImage(response.weather[0].description, convertKtoF(response.main.temp));
-		output.style.display = 'block';
+
 	}
+
   else if (error == 'Bad Request'){
-      error.style.display = 'block';
-      errorMessage.innerHTML = apiRequest.statusText;
-      displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
+    	error.style.display = 'block';
+  		errorMessage.innerHTML = apiRequest.statusText;
+      resetForm();
   }
-	else {
-		error.style.display = 'block';
-		errorMessage.innerHTML = apiRequest.statusText;
-	}
 
-}
+  	else {
+  		error.style.display = 'block';
+  		errorMessage.innerHTML = apiRequest.statusText;
+      resetForm();
+      displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
+  	}
 
-  // function resetForm() {
-    // document.getElementById("output").reset();
-    // document.getElementById("cityOutput").reset();
-    // document.getElementById("temperatureOutputK").reset();
-    // document.getElementById("temperatureOutputF").reset();
-    // document.getElementById("temperatureOutputC").reset();
-    // document.getElementById("condition").reset();
+  }
 
-  // }
+  function resetForm() {
+    document.getElementById("output").reset;
+    document.getElementById("cityOutput").reset;
+    document.getElementById("temperatureOutputK").reset;
+    document.getElementById("temperatureOutputF").reset;
+    document.getElementById("temperatureOutputC").reset;
+    document.getElementById("condition").reset;
+  }
 
 // funtions to calculate temperature conversions
 function convertKtoF(kelvin) {
@@ -148,7 +152,7 @@ function displayImage(condition,tempF) {
 	else if (condition.includes('thunderstorm')){
 		weatherImage.src = "images/thunderstorm.jpg";
 	}
-	else if (condition.includes('overcast', 'cloudy')){
+	else if (condition.includes('overcast', 'cloudy', 'clouds')){
 		weatherImage.src = "images/cloudy.jpeg";
   }
     else if (condition.includes('mist')){
@@ -159,9 +163,12 @@ function displayImage(condition,tempF) {
   }
   else if (condition.includes('haze')){
     weatherImage.src = "images/Hazy-weather.jpg";
-}
+  }
 	else if (condition.includes('snow')){
 		weatherImage.src = "images/snow-car.jpeg";
+		}
+	else if (condition.includes('clear')){
+		weatherImage.src = "images/perfectweather.jpg";
 		}
  // if neither condition above matches,
  // image will be determined by temperature

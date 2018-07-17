@@ -29,6 +29,10 @@ h1{
 	position: relative;
 }
 
+#myContainer{
+	text-align: center;
+}
+
 #input-form{
 	font-style: Coda;
 	column-count: 2;
