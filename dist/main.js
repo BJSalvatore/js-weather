@@ -1,20 +1,15 @@
 var weatherButton = document.getElementById('weatherButton');
 var zipCode = document.getElementById('zipCode');
-var resetButton = document.getElementByID('resetButton');
+var resetButton = document.getElementById('resetButton');
+
 
 // Waits for page to load before firing
 document.onreadystatechange = function() {
 	if (document.readyState == "interactive") {
 		// Initialize your application or run some code.
 		weatherButton.onclick = getWeather;
-		if(weatherButton.onclick || input.keyCode === 13){
-			getWeather();
-  		}
-		  // not sure where this goes
-      resetButton.onclick = resetForm;
-  		if(resetButton.onclick || input.keyCode === 13){
-  			resetForm();
-		}
+    resetButton.onclick = resetForm;
+
 	}
 };
 
@@ -30,15 +25,15 @@ document.onreadystatechange = function() {
     });
 
     // Execute a function when the user releases a key on the keyboard
-    resetButton.addEventListener("keyup", function(resetForm) {
-    // Cancel the default action, if needed
-    event.preventDefault();
-    // // Number 13 is the "Enter" key on the keyboard
-    if (event.keyCode === 13) {
-      // Trigger the getWeather function by enter key
-      resetForm();
-    }
-  });
+    // resetButton.addEventListener("keyup", function(resetForm) {
+    // // Cancel the default action, if needed
+    // event.preventDefault();
+    // // // Number 13 is the "Enter" key on the keyboard
+    // if (event.keyCode === 13) {
+    //   // Trigger the getWeather function by enter key
+    //   resetForm();
+  //   // }
+  // });
 
 // Output variables
 var output = document.getElementById('output');
@@ -63,7 +58,7 @@ var appId = "4363e3e1747e40f10b2355eee16763f6";
 function getWeather() {
 	// Set up url for fetching weather data.
 	var url= "http://api.openweathermap.org/data/2.5/weather?zip=<zipCode>&us&appid=<appId>";
-	// console.log("This is working.");
+
 	// zipcode from input is assigned to api url
 	url = url.replace("<zipCode>", zipCode.value);
 	// my api id replaces variable in api url
@@ -86,7 +81,7 @@ function httpRequestOnError() {
 
 function catchResponse() {
 		var response = JSON.parse(apiRequest.responseText);
-		console.log(response);
+
 
 		cityOutput.innerHTML = response.name;
 		tempK.innerHTML = Math.round(response.main.temp) + ' K';
@@ -120,12 +115,8 @@ function catchResponse() {
 
 //function to clear fields
 function resetForm() {
-  document.getElementById("output").reset;
-  document.getElementById("cityOutput").reset;
-  document.getElementById("temperatureOutputK").reset;
-  document.getElementById("temperatureOutputF").reset;
-  document.getElementById("temperatureOutputC").reset;
-  document.getElementById("condition").reset;
+	document.getElementById("input-form").reset();
+
 }
 
 // functions to calculate temperature conversions
