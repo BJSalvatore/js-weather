@@ -1,41 +1,47 @@
-var myWindow = document.getElementById('myContainer');
-var resizeButton = document.getElementById('resizeButton');
-
-
-// // window.onloadwindow.resizeTo(500, 800);
-// source.onopen = function() {
-//   myWindow.resizeTo(500, 800);
-//     // document.getElementById("myH1").innerHTML = "Getting server updates";
-// };
-//
-//
-// resizeButton.onclick = resizeWin;
-//
-// function resizeWin() {
-// 	myWindow.resizeTo(500, 800);
-// 	myWindow.focus();
-// }
-
-
 var weatherButton = document.getElementById('weatherButton');
 var zipCode = document.getElementById('zipCode');
+var resetButton = document.getElementByID('resetButton');
 
-var enterWeather = document.getElementById('weatherButton');
+// Waits for page to load before firing
+document.onreadystatechange = function() {
+	if (document.readyState == "interactive") {
+		// Initialize your application or run some code.
+		weatherButton.onclick = getWeather;
+		if(weatherButton.onclick || input.keyCode === 13){
+			getWeather();
+  		}
+		  // not sure where this goes
+      resetButton.onclick = resetForm;
+  		if(resetButton.onclick || input.keyCode === 13){
+  			resetForm();
+		}
+	}
+};
 
-// Execute a function when the user releases a key on the keyboard
-weatherButton.addEventListener("keyup", function(getWeather) {
-  // Cancel the default action, if needed
-  event.preventDefault();
-  // Number 13 is the "Enter" key on the keyboard
-  if (event.keyCode === 13) {
-    // Trigger the getWeather function by enter key
-    getWeather();
-  }
-});
+    // Execute a function when the user releases a key on the keyboard
+    weatherButton.addEventListener("keyup", function(getWeather) {
+      // Cancel the default action, if needed
+      event.preventDefault();
+      // Number 13 is the "Enter" key on the keyboard
+      if (event.keyCode === 13) {
+        // Trigger the getWeather function by enter key
+        getWeather();
+      }
+    });
 
+    // Execute a function when the user releases a key on the keyboard
+    resetButton.addEventListener("keyup", function(resetForm) {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // // Number 13 is the "Enter" key on the keyboard
+    if (event.keyCode === 13) {
+      // Trigger the getWeather function by enter key
+      resetForm();
+    }
+  });
 
 // Output variables
-// var output = document.getElementById('output');
+var output = document.getElementById('output');
 var cityOutput = document.getElementById('cityOutput');
 var tempK = document.getElementById('temperatureOutputK');
 var tempF = document.getElementById('temperatureOutputF');
@@ -46,22 +52,11 @@ var weatherImage = document.getElementById('weatherImage');
 // Error variables
 var error = document.getElementById('error');
 var errorMessage = document.getElementById('errorMessage');
-
 // api variables
 // uniniated variable for api request
 var apiRequest;
 // variable for my openweatherMap API access
 var appId = "4363e3e1747e40f10b2355eee16763f6";
-
-// Waits for page to load before firing
-document.onreadystatechange = function() {
-	if (document.readyState == "interactive") {
-		// Initialize your application or run some code.
-		weatherButton.onclick = getWeather;
-		// if(weatherButton.onclick || input.keyCode === 13){
-		// 	getWeather();
-		}
-};
 
 
 // function for retrieving information from api
@@ -73,7 +68,6 @@ function getWeather() {
 	url = url.replace("<zipCode>", zipCode.value);
 	// my api id replaces variable in api url
 	url = url.replace("<appId>", appId);
-
 	// Code that fetches data from the API URL and stores it in results.
 	// creates a new instance of apiRequest
 	apiRequest = new XMLHttpRequest();
@@ -85,55 +79,56 @@ function getWeather() {
 
 // sets up error response
 function httpRequestOnError() {
-  errorMessage.innerHTML = 'There was a problem. Try again later.'
-  output.style.display = 'none';
-	error.style.display = 'block';
+    output.style.display = 'none';
+    errorMessage.innerHTML = 'There was a problem. Try again later.'
+  	error.style.display = 'block';
 }
 
 function catchResponse() {
-// if status of api is not an error,
-// function prepares output to appear on html page
-	if (apiRequest.statusText === "OK") {
-
 		var response = JSON.parse(apiRequest.responseText);
 		console.log(response);
 
-		error.style.display = 'none';
-    output.style.display = 'block';
 		cityOutput.innerHTML = response.name;
 		tempK.innerHTML = Math.round(response.main.temp) + ' K';
 		tempF.innerHTML = convertKtoF(response.main.temp) + '&deg; F';
 		tempC.innerHTML = convertKtoC(response.main.temp) + '&deg; C';
 		condition.innerHTML = response.weather[0].description;
-		displayImage(response.weather[0].description, convertKtoF(response.main.temp));
+    displayImage(response.weather[0].description, convertKtoF(response.main.temp));
 
-	}
+    // if status of api is not an error,
+    // function prepares output to appear on html page
+  	if (apiRequest.statusText === "OK") {
+      error.style.display = 'none';
+      output.style.display = 'block';
+    }
+    if (error == 'Bad Request'){
+      	error.style.display = 'block';
+        output.style.display = 'none';
+    		errorMessage.innerHTML = apiRequest.statusText;
+        // what about img display
+        // resetForm();
+      }
+    	else {
+    		error.style.display = 'block';
+    		errorMessage.innerHTML = apiRequest.statusText;
+        // what about img display
+        output.style.display = 'none';
+        // resetForm();
+        displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
+    	}
+    }
 
-  else if (error == 'Bad Request'){
-    	error.style.display = 'block';
-  		errorMessage.innerHTML = apiRequest.statusText;
-      resetForm();
-  }
+//function to clear fields
+function resetForm() {
+  document.getElementById("output").reset;
+  document.getElementById("cityOutput").reset;
+  document.getElementById("temperatureOutputK").reset;
+  document.getElementById("temperatureOutputF").reset;
+  document.getElementById("temperatureOutputC").reset;
+  document.getElementById("condition").reset;
+}
 
-  	else {
-  		error.style.display = 'block';
-  		errorMessage.innerHTML = apiRequest.statusText;
-      resetForm();
-      displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
-  	}
-
-  }
-
-  function resetForm() {
-    document.getElementById("output").reset;
-    document.getElementById("cityOutput").reset;
-    document.getElementById("temperatureOutputK").reset;
-    document.getElementById("temperatureOutputF").reset;
-    document.getElementById("temperatureOutputC").reset;
-    document.getElementById("condition").reset;
-  }
-
-// funtions to calculate temperature conversions
+// functions to calculate temperature conversions
 function convertKtoF(kelvin) {
 	var fahr = kelvin * (9/5) - 459.67;
 	return Math.round(fahr);
@@ -144,7 +139,8 @@ function convertKtoC(kelvin) {
 	return Math.round(cel);
 }
 
-function displayImage(condition,tempF) {
+// function to display matching image
+function displayImage(condition, tempF) {
 	// tries to match to either condition first
 	if(condition.includes('rain')){
 		weatherImage.src = "images/rain.jpg";
@@ -152,7 +148,7 @@ function displayImage(condition,tempF) {
 	else if (condition.includes('thunderstorm')){
 		weatherImage.src = "images/thunderstorm.jpg";
 	}
-	else if (condition.includes('overcast', 'cloudy', 'clouds')){
+	else if ((condition.includes('overcast')) || (condition.includes('cloudy')) || (condition.includes('clouds'))){
 		weatherImage.src = "images/cloudy.jpeg";
   }
     else if (condition.includes('mist')){
@@ -181,7 +177,7 @@ function displayImage(condition,tempF) {
 	else if (tempF < 32 || !condition.includes('snow')) {
 		weatherImage.src = "images/freezing-cold.jpeg";
 	// else if (errorMessage)
-} else {
+  }else {
 		weatherImage.src = "images/sheep-animated-gif.gif";
 		// weatherImage.src="http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif";
 	}
