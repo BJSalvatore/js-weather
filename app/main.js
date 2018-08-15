@@ -2,39 +2,6 @@ var weatherButton = document.getElementById('weatherButton');
 var zipCode = document.getElementById('zipCode');
 var resetButton = document.getElementById('resetButton');
 
-
-// Waits for page to load before firing
-document.onreadystatechange = function() {
-	if (document.readyState == "interactive") {
-		// Initialize your application or run some code.
-		weatherButton.onclick = getWeather;
-    resetButton.onclick = resetForm;
-
-	}
-};
-
-    // Execute a function when the user releases a key on the keyboard
-    weatherButton.addEventListener("keyup", function(getWeather) {
-      // Cancel the default action, if needed
-      event.preventDefault();
-      // Number 13 is the "Enter" key on the keyboard
-      if (event.keyCode === 13) {
-        // Trigger the getWeather function by enter key
-        getWeather();
-      }
-    });
-
-    // Execute a function when the user releases a key on the keyboard
-    // resetButton.addEventListener("keyup", function(resetForm) {
-    // // Cancel the default action, if needed
-    // event.preventDefault();
-    // // // Number 13 is the "Enter" key on the keyboard
-    // if (event.keyCode === 13) {
-    //   // Trigger the getWeather function by enter key
-    //   resetForm();
-  //   // }
-  // });
-
 // Output variables
 var output = document.getElementById('output');
 var cityOutput = document.getElementById('cityOutput');
@@ -52,7 +19,14 @@ var errorMessage = document.getElementById('errorMessage');
 var apiRequest;
 // variable for my openweatherMap API access
 var appId = "4363e3e1747e40f10b2355eee16763f6";
-
+// Waits for page to load before firing
+document.onreadystatechange = function() {
+	if (document.readyState == "interactive") {
+		// Initialize your application or run some code.
+		weatherButton.onclick = getWeather;
+		resetButton.onclick = resetForm;
+	}
+};
 
 // function for retrieving information from api
 function getWeather() {
@@ -80,43 +54,29 @@ function httpRequestOnError() {
 }
 
 function catchResponse() {
+	if(apiRequest.statusText === "OK"){
+
 		var response = JSON.parse(apiRequest.responseText);
 
-
+		error.style.display = 'none';
 		cityOutput.innerHTML = response.name;
 		tempK.innerHTML = Math.round(response.main.temp) + ' K';
 		tempF.innerHTML = convertKtoF(response.main.temp) + '&deg; F';
 		tempC.innerHTML = convertKtoC(response.main.temp) + '&deg; C';
 		condition.innerHTML = response.weather[0].description;
     displayImage(response.weather[0].description, convertKtoF(response.main.temp));
+		output.style.display = 'block';
 
-    // if status of api is not an error,
-    // function prepares output to appear on html page
-  	if (apiRequest.statusText === "OK") {
-      error.style.display = 'none';
-      output.style.display = 'block';
-    }
-    if (error == 'Bad Request'){
-      	error.style.display = 'block';
-        output.style.display = 'none';
-    		errorMessage.innerHTML = apiRequest.statusText;
-        // what about img display
-        // resetForm();
-      }
-    	else {
+      }	else {
     		error.style.display = 'block';
     		errorMessage.innerHTML = apiRequest.statusText;
-        // what about img display
-        output.style.display = 'none';
-        // resetForm();
-        displayImage(	weatherImage.src = "images/sheep-animated-gif.gif");
+				output.style.display = 'none';
     	}
-    }
+  }
 
 //function to clear fields
 function resetForm() {
-	document.getElementById("input-form").reset();
-
+	location.reload();
 }
 
 // functions to calculate temperature conversions
@@ -140,7 +100,7 @@ function displayImage(condition, tempF) {
 		weatherImage.src = "images/thunderstorm.jpg";
 	}
 	else if ((condition.includes('overcast')) || (condition.includes('cloudy')) || (condition.includes('clouds'))){
-		weatherImage.src = "images/cloudy.jpeg";
+		weatherImage.src = "images/cloudy.jpg";
   }
     else if (condition.includes('mist')){
   		weatherImage.src = "images/mist.jpg";
@@ -165,11 +125,14 @@ function displayImage(condition, tempF) {
 	else if ((tempF > 65 && tempF < 85 || condition.includes('clear sky')) && !condition.includes('rain')) {
 		weatherImage.src = "images/perfectweather.jpg";
 		}
+	else if ((tempF > 65 && tempF < 85 || condition.includes('few clouds')) && !condition.includes('rain')) {
+		weatherImage.src = "images/niceweather.jpg";
+		}
 	else if (tempF < 32 || !condition.includes('snow')) {
-		weatherImage.src = "images/freezing-cold.jpeg";
+		weatherImage.src = "images/freezingcold.jpg";
 	// else if (errorMessage)
-  }else {
+  } else {
 		weatherImage.src = "images/sheep-animated-gif.gif";
-		// weatherImage.src="http://bestanimations.com/Animals/Mammals/sheep-animated-gif.gif";
+
 	}
 }
