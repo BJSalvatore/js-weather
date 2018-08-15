@@ -31,7 +31,7 @@ document.onreadystatechange = function() {
 // function for retrieving information from api
 function getWeather() {
 	// Set up url for fetching weather data.
-	var url= "http://api.openweathermap.org/data/2.5/weather?zip=<zipCode>&us&appid=<appId>";
+	var url= "https://api.openweathermap.org/data/2.5/weather?zip=<zipCode>&us&appid=<appId>";
 
 	// zipcode from input is assigned to api url
 	url = url.replace("<zipCode>", zipCode.value);
