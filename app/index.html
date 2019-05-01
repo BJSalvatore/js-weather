@@ -1,70 +1,22 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 <head>
   <meta charset="UTF-8">
-	<title>Weather Application</title>
+	<title>Open Application</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"
   integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css?family=Coda|Merriweather|PT+Sans" rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body style = "width: 350px; height: 800px;" id="myContainer" background="images/knit-orange-lg.jpg">
-<h1>Weather Application</h1>
-<div class="container-fluid content-align-center">
-  <form id="input-form" class="row justify-content-center">
-      <div>
-        <input id="zipCode" type="input"  placeholder="Enter zipcode"></input>
-      </div>
-      <div>
-        <button id="weatherButton" type="button">Get Weather</button>
-      </div>
-      <div>
-        <button id="resetButton" type="button">Clear form</button>
-        <!-- <button id="resizeButton" type="button">Resize window</button> -->
-      </div>
-  </form>
 
-<div id="error" style="display: none;">
-  <div class="card mb-3">
-      <div class="card-header" style="background-color: #FC1501; border-top-left-radius: 10px; border-top-right-radius: 10px;">Error</div>
-      <div id="errorMessage" class="card-body pt-3 pb-3"></div>
+<body>
+<div class="row">
+  <div class="container-fluid text-center mt-4" style="width: 400px; height: 400px;">
+  <h2>Click the button to open Beth's Weather App.</h2>
+  <a id="appButton" class="btn btn-lg btn-info" onclick="window.open('https://beth-weather-app.herokuapp.com/app.html', 'width=350,height=800')">Open Weather App</a>
   </div>
 </div>
-<div id="output">
-  <div class="card mb-3">
-      <div id="city">
-        <div class="card-header" style="background-color: #FF6103; border-top-left-radius: 10px; border-top-right-radius: 10px;">City</div>
-        <div id="cityOutput" class="card-body pt-3 pb-3"></div>
-      </div>
-  </div>
-
-  <div class="card mb-3">
-    <div class="card-header" style="background-color: #E9967A; border-top-left-radius: 10px; border-top-right-radius: 10px;">Temperature</div>
-      <!-- <div id="shortRow"> -->
-      <div class="row justify-content-center no-gutters">
-        <div id="temperatureOutputK" class="card-body col pt-3 pb-3" style="width: 70px;"></div>
-        <div id="temperatureOutputF" class="card-body col pt-3 pb-3" style="width: 70px;"></div>
-        <div id="temperatureOutputC" class="card-body col pt-3 pb-3" style="width: 70px;"></div>
-      </div>
-    </div>
-
-    <div class="card mb-3">
-        <div class="card-header" style="background-color: #b4656f; border-top-left-radius: 10px; border-top-right-radius: 10px;">Condition</div>
-        <div id="condition" class="card-body pt-3 pb-3"></div>
-    </div>
-
-    <div class="card mb-3"  style="max-height: 280px;">
-      <div id="photoFrame">
-        <img class="img-responsive" style="max-width: 300px; min-height: 260px;" alt="" src="images/sheep-animated-gif.gif" id="weatherImage"></img>
-      </div>
-    </div>
-  </div>
-</div>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
-<script src="main.js"></script>
 
 </body>
 </html>

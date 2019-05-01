@@ -1,3 +1,5 @@
+var myWindow = document.getElementById('myApp');
+
 var weatherButton = document.getElementById('weatherButton');
 var zipCode = document.getElementById('zipCode');
 var resetButton = document.getElementById('resetButton');

@@ -15,18 +15,21 @@ gulp.task('copyimages', function(){
 });
 
 gulp.task('copyjs', function(){
-  return gulp.src('app/*.js')
+  return gulp.src('app/js/*.js')
   .pipe(gulp.dest('dist/'))
 });
 
 // function to change sass code to css
 gulp.task('copycss', function() {
-	return gulp.src('app/*.css')
+	return gulp.src('app/css/*.css')
 		.pipe(gulp.dest('dist/'))
 });
 
 gulp.task('watch', function() {
-	gulp.watch('app/**/*', ['copyhtml', 'copyimages', 'copyjs', 'copycss'])
+	gulp.watch('app/*.+(htm|html)', gulp.series('copyhtml'));
+  gulp.watch('app/images/*.+(png|jpg|gif)', gulp.series('copyimages'));
+  gulp.watch('app/js/*.js', gulp.series('copyjs'));
+  gulp.watch('app/**/*.css', gulp.series('copycss'));
 });
 
 gulp.task('default', function(callback) {
