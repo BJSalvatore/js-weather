@@ -10,7 +10,8 @@
     "heroku": "^7.6.0",
     "jquery": "^3.4.0",
     "node-sass": "^4.12.0",
-    "popper.js": "^1.15.0"
+    "popper.js": "^1.15.0",
+    "tar": "^4.4.8"
   },
   "devDependencies": {
     "bootstrap": "^4.3.1",
