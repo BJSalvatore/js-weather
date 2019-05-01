@@ -54,6 +54,10 @@ function httpRequestOnError() {
     errorMessage.innerHTML = 'There was a problem. Try again later.'
   	error.style.display = 'block';
 }
+// 
+// function capitalize(condition){
+// 	condition.innerHTML = lower.charAt(0).toUpperCase() + lower.substring(1);
+// }
 
 function catchResponse() {
 	if(apiRequest.statusText === "OK"){
@@ -91,6 +95,7 @@ function convertKtoC(kelvin) {
 	var cel = kelvin - 273.15;
 	return Math.round(cel);
 }
+
 
 // function to display matching image
 function displayImage(condition, tempF) {
