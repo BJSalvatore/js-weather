@@ -54,7 +54,7 @@ function httpRequestOnError() {
     errorMessage.innerHTML = 'There was a problem. Try again later.'
   	error.style.display = 'block';
 }
-// 
+//
 // function capitalize(condition){
 // 	condition.innerHTML = lower.charAt(0).toUpperCase() + lower.substring(1);
 // }
