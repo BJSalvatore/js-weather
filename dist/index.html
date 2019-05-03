@@ -6,9 +6,11 @@
   <title>Weather Application</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
   <link rel="stylesheet" type="text/css" href="style.css">
+  <!-- Image by <a href="https://pixabay.com/users/rawpixel-4283981/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3335734">rawpixel</a> from <a href="https://pixabay.com/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=3335734">Pixabay</a> -->
+  <!-- <a href="https://www.freepik.com/free-photos-vectors/background">Background photo created by freepik - www.freepik.com</a> -->
 </head>
 
-<body id="myApp" background="images/knit-orange-lg.jpg">
+<body id="myApp">
   <div class="row">
     <div class="container d-flex text-align-center content-align-center">
       <div class="col-12-md">
@@ -27,20 +29,20 @@
         </form>
         <div id="error" style="display: none;">
           <div class="card mb-3">
-            <div class="card-header" style="background-color: #FC1501; border-top-left-radius: 10px; border-top-right-radius: 10px;">Error</div>
+            <div class="card-header" style="background-color: #8B0000; border-top-left-radius: 10px; border-top-right-radius: 10px;">Error</div>
             <div id="errorMessage" class="card-body pt-3 pb-3"></div>
           </div>
         </div>
         <div id="output">
           <div class="card mb-3">
             <div id="city">
-              <div class="card-header" style="background-color: #FF6103; border-top-left-radius: 10px; border-top-right-radius: 10px;">City</div>
+              <div class="card-header" style="background-color: #5D6D7E; border-top-left-radius: 10px; border-top-right-radius: 10px;">City</div>
               <div id="cityOutput" class="card-body pt-3 pb-3"></div>
             </div>
           </div>
 
           <div class="card mb-3">
-            <div class="card-header" style="background-color: #E9967A; border-top-left-radius: 10px; border-top-right-radius: 10px;">Temperature</div>
+            <div class="card-header" style="background-color: #D4AF37; border-top-left-radius: 10px; border-top-right-radius: 10px;">Temperature</div>
             <!-- <div id="shortRow"> -->
             <div class="row justify-content-center no-gutters">
               <div id="temperatureOutputK" class="card-body col pt-3 pb-3" style="width: 70px;"></div>
@@ -50,7 +52,7 @@
           </div>
 
           <div class="card mb-3">
-            <div class="card-header" style="background-color: #b4656f; border-top-left-radius: 10px; border-top-right-radius: 10px;">Condition</div>
+            <div class="card-header" style="background-color: #8B0000; color: #ffff;  border-top-left-radius: 10px; border-top-right-radius: 10px;">Condition</div>
             <div id="condition" class="card-body pt-3 pb-3"></div>
           </div>
 
